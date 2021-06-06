@@ -1,0 +1,31 @@
+{
+  "name": "מלםשכר מחשבון שכר - הרחבה",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "התוסף מוסיף שורת סיכום למחשבון שכר של מלםשכר הכוללת סכום כולל של תשלומי מיסים וסיציאליים",
+  "homepage_url": "https://github.com/alexpov/payroll-calculator-chrome-extension",
+  "author": "alexpov",
+  "icons": {
+    "64": "assets/icons/icon_64.png"
+  },
+  "incognito": "split",
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "assets/css/content.css"
+      ],
+      "matches": [
+        "*://calc.malam-payroll.com/*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "assets/*"
+  ]
+}
